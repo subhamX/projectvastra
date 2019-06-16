@@ -1,0 +1,43 @@
+.nav-wrapper ul li a{
+    color: black;
+}
+
+
+.homepage-sec1{
+    background-color: #EFEFE8;
+}
+
+.entrepreneur-list{
+    background-color: #EFEFE8;
+    color: black;
+}
+
+.entrepreneur-list .card-title{
+    color:black !important;
+    font-weight: bold;
+}
+
+.collection .collection-item{
+    margin: 20px;
+    padding: 15px 0;
+    font-size: 25px;
+    font-weight: bolder;
+    border-radius: 45px;
+
+}
+
+
+@media only screen and (max-width: 900px){
+    .collection .collection-item{
+        margin: 15px;
+        padding: 10px 0;
+        font-size: 20px;    
+    }
+}
+@media only screen and (max-width: 450px){
+    .collection .collection-item{
+        margin: 10px;
+        padding: 7px 7px;
+        font-size: 15px;    
+    }
+}

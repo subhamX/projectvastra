@@ -1,0 +1,147 @@
+
+
+
+
+.entrepreneur-list{
+    display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;      /* TWEENER - IE 10 */
+    display: -webkit-flex;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.custom-card{
+    background-color: white;
+    height: 400px;
+}
+a.custom-card-title{
+    font-size: 15px;
+    text-align: left;
+}
+a.custom-card-title:hover{
+    color: orange;
+}
+
+.custom-card-price{
+    padding: 5px 20px;
+    font-size: 21px;
+}
+.custom-card-image img{
+    margin: 20px;
+    width:250px;
+    height: 200px;
+    object-fit: contain;
+}
+.hurry-message{
+    padding: 2.5px 20px;
+    color: maroon;
+}
+
+.product{
+    border: 3px solid white;
+    border-radius: 10px;
+    margin: 20px 10px;
+    flex-basis: 250px;
+}
+
+@media only screen and (max-width: 1280px){
+    .custom-card-image img{
+        width:230px;
+        height: 200px;
+    }
+    .product{
+        flex-basis: 200px;
+    }
+}
+@media only screen and (max-width: 1202px){
+    .custom-card-image img{
+        width:200px;
+        height: 200px;
+    }
+    .product{
+        flex-basis: 200px;
+    }
+}
+@media only screen and (max-width: 1280px){
+    .custom-card-image img{
+        width:200px;
+        height: 200px;
+    }
+}
+@media only screen and (max-width: 816px){
+    .custom-card-image img{
+        width:200px;
+        height: 200px;
+    }
+    .product{
+        flex-basis: 250px;
+        margin: 20px 5px;
+    }
+}
+
+@media only screen and (max-width: 796px){
+    .custom-card-image img{
+        width:300px;
+        height: 200px;
+    }
+    .product{
+        flex-basis: 300px;
+        /* margin: 20px 5px;  */
+    }
+}
+@media only screen and (max-width: 728px){
+    .custom-card-image img{
+        width:250px;
+        height: 200px;
+    }
+    .product{
+        flex-basis: 250px;
+        /* margin: 20px 5px;  */
+    }
+}
+@media only screen and (max-width: 626px){
+    .custom-card-image img{
+        width:200px;
+        height: 200px;
+    }
+    .product{
+        flex-basis: 200px;
+        /* margin: 20px 5px;  */
+    }
+}
+@media only screen and (max-width: 536px){
+    .custom-card-image img{
+        width:300px;
+        height: 200px;
+    }
+    .product{
+        flex-basis: auto;
+        margin: 10px 5px; 
+    }
+}
+@media only screen and (max-width: 423px){
+    .custom-card-image img{
+        width:280px;
+        height: 200px;
+    }
+}
+@media only screen and (max-width: 423px){
+    .custom-card-image img{
+        width:250px;
+        height: 200px;
+    }
+}
+@media only screen and (max-width: 322px){
+    .custom-card-image img{
+        width:200px;
+        height: 200px;
+    }
+}
+@media only screen and (max-width: 278px){
+    .custom-card-image img{
+        width:150px;
+        height: 200px;
+    }
+}

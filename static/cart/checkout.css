@@ -1,0 +1,24 @@
+.collection.main-cart{
+    margin-top: 20px;
+}
+
+.collection .name{
+    width: 50%;
+}
+.collection .subtotal{
+    width: 100%;
+}
+
+.finalcprice{
+    color: maroon;
+    font-weight: bold;
+    /* width: 100% */
+}
+
+.proceed-btn .btn{
+    width: fit-content;
+}
+
+.collection-item.cart-price{
+    padding-left: 0 !important;
+}

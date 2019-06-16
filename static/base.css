@@ -1,0 +1,145 @@
+*{
+    font-family: 'Lato', sans-serif;
+}
+
+.sidenav li a.first{
+    margin-top: 40px !important;
+}
+
+.bcart{
+    position: relative;
+}
+
+nav{
+    height: 64px !important;
+}
+.bcart .cart-text{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-weight: bolder;
+}
+.bcart .cart-num{
+    position: absolute;
+    top: -10px;
+    right: 55px;
+    color: white;
+    z-index: 100;
+    font-weight: bolder;
+}
+.bcart .cart-logo{
+    position: absolute;
+    top: 0;
+    right: 30px;
+}
+
+footer{
+    margin-top: 40px !important;
+
+}
+
+footer div ul li a{
+    color: grey !important;
+}
+footer div ul li a:hover{
+    color: yellow !important;
+}
+
+.bcart *{
+    cursor: pointer;
+}
+.sidenav li a{
+    font-weight: bold !important;
+}
+body{
+    background-color: #EFEFE8;
+}
+
+.hurry-message{
+    padding: 2.5px 0;
+    color: maroon;
+}
+
+.brand-logo{
+    font-weight: bolder;
+}
+
+.bcart i{
+    font-size: 60px !important;
+}
+
+@media only screen and (max-width:628px){
+    .brand-logo{
+        /* font-weight: bolder; */
+        font-size: 24px !important;
+    }
+    .bcart i{
+        font-size: 50px !important;
+    }
+    .bcart .cart-num{
+        position: absolute;
+        top: -9px;
+        right: 50px;
+    }
+}
+@media only screen and (max-width:517px){
+    .brand-logo{
+        font-size: 20px !important;
+    }
+    .bcart i{
+        font-size: 47px !important;
+    }
+    .bcart .cart-text{
+        font-size: 13px;
+    }
+}
+@media only screen and (max-width:432px){
+    .brand-logo{
+        font-size: 18px !important;
+    }
+    .bcart i{
+        font-size: 40px !important;
+    }
+    .bcart .cart-num{
+        position: absolute;
+        top: -6.5px;
+        right: 47px;
+    }
+}
+@media only screen and (max-width:395px){
+    .brand-logo{
+        font-size: 15px !important;
+    }
+    .bcart .sidenav-trigger i{
+        font-size: 30px !important;
+    }
+}
+@media only screen and (max-width:330px){
+    .brand-logo{
+        font-size: 13px !important;
+        font-weight: 500;
+    }
+    .bcart .sidenav-trigger i{
+        font-size: 30px !important;
+    }
+    .bcart .cart-text{
+        display: none;
+    }
+    .bcart .cart-logo{
+        position: absolute;
+        top: 0;
+        right: 10px;
+    }
+    .bcart .cart-num{
+        position: absolute;
+        top: -6.5px;
+        right: 25px;
+    }
+}
+/*
+@media only screen and (max-width:624px){
+    .brand-logo{
+        font-weight: bold;
+        font-size: 18px !important;
+    }    
+} */

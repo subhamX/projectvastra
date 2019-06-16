@@ -1,0 +1,189 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>The Project Vastra | About</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel='stylesheet' type='text/css' href='{% static "materialize/css/materialize.min.css" %}'>
+    <link rel='stylesheet' type='text/css' href='{% static "base.css" %}'>
+
+    <link rel='stylesheet' type='text/css' href='{% static "customer/homestyle.css" %}'>
+    <script src='{% static "materialize/js/materialize.min.js" %}'></script>
+</head>
+<body>
+    <!-- NAVBAR BEGIN -->
+    <div class="navbar-fixed">
+        <nav>
+            <div class="nav-wrapper white">
+                <a href='/' class='brand-logo black-text center'>THE PROJECT VASTRA</a>
+                <div class='bcart'>
+                    <a href="#" data-target="mobile-links" class="valign-wrapper left sidenav-trigger show-on-large"><i class="material-icons black-text">menu</i></a>
+                    <a href='{% url "cart:checkout" %}'>
+                        <span class='cart-text black-text right' href=''>Cart</span>
+                        <div class="valign-wrapper cart-num">{{ cartc }}</div>
+                        <span href="#" class="cart-logo valign-wrapper right black-text"><i class="material-icons black-text">shopping_cart</i></span>
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <ul class="sidenav right" id='mobile-links'>
+        <li><a class='first' href='/'>Home</a></li>
+        <li><a href='{% url "customer:about" %}'>About</a></li>
+        <li><a href='{% url "seller:profiles" %}'>Our Entrepreneurs</a></li>
+        <li><a href='{% url "customer:catalog" %}'>Products Catalog</a></li>
+        <li><a href='{% url "customer:collectionDrive" %}'>Register For Collection Drive</a></li>
+        <li><a href='{% url "seller:new" %}'>Register As An Entrepreneur</a></li>
+        <li><a href='{% url "customer:generalContact" %}'>Contact Us</a></li>
+        {% if user.is_authenticated %}
+            <li><a href='{% url "accounts:logout" %}'>Logout</a></li>
+        {% else %}
+            <li><a href='{% url "accounts:signin" %}'>SignIn</a></li>
+            <li><a href='{% url "accounts:signup" %}'>SignUp</a></li>
+        {% endif %}
+    </ul>
+
+    <!-- NAVBAR END -->
+
+
+    <!-- HEADING BEGIN -->
+    <div class="container center ">
+        <span><i class="material-icons blue-text medium">turned_in</i></span>
+        <span><h3><b>ABOUT US</b></h3></span>
+    </div>
+    <!-- HEADING END -->
+
+
+    <!-- MAIN CONTENT BEGIN -->    
+    <div class="row container">
+        <div class="col s12">
+            <div class="card-panel orange accent-3 large">
+            <span>
+                <p>
+                    <b>Food, shelter, and clothing</b> are the three major requisites for life. But it is disheartening to know that one in every eight persons in the world does not have adequate clothing. Then there is the prevalent problem of discarding old and worn out clothes. Recent studies have revealed that there is a huge number of people who discard their clothes each season while not reusing them or donating them.
+                    This is why Enactus IIT Ropar is working hard to address this issue through its initiative Vatsra. The project has left no stone unturned, from collaborating with numerous colleges to organizing countless cloth distribution camps, Vastra has done it all. 
+                    Vastra essentially collects old clothes from various sources and gives them to an entrepreneur. The entrepreneur stores the clothes in a warehouse and segregates them in various categories depending on their condition. The clothes in bad condition are recycled and turned into high-quality carpets and blankets, wheres the other ones are washed and re-sold at low rates in various camps.
+                    Till now we have impacted thousands of lives, be it the entrepreneurs working for us, the people who wash and recycle the clothes, people working in the mills making carpets and the poor people who ultimately wear the clothes. It is now that Vastra has been active for almost 3 years that we are realizing the dream of Vastra, and are able to see the entire process working smoothly. 
+                    Yes, it took a lot of groundwork, innumerable field trips and plenty of sleepless nights, but now that the path is set, the progress of the project can be seen and the business created by team Vastra can be remarked upon.
+                </p>
+            </span>
+            <br>
+            </div>
+        </div>
+        <div class="col s12">
+            <div class="card-panel white large">
+            <span>
+                <br>
+                <div class="black-text">
+                    <b>To address the issue</b> of inadequate clothing for poor sections of the society, Enactus IIT Ropar is working hard through the initiative Vastra. Team Vastra essentially collects old clothes from various sources and gives them to an entrepreneur. The entrepreneur stores the clothes in a warehouse and segregates them in various categories depending on their condition. The clothes in bad condition are recycled and turned into high-quality carpets and blankets, wheres the other ones are washed and re-sold at low rates in various camps.
+                    <p>
+                        Till now we have impacted thousands of lives, be it the entrepreneurs working for us, the people who wash and recycle the clothes, people working in the mills making carpets and the poor people who ultimately wear the clothes. It is now that Vastra has been active for almost 3 years that we are realizing the dream of Vastra, and are able to see the entire process working smoothly. 
+                    </p>
+                    <b>
+                        We are a team, dedicated to solving the prevalent problem of inadequate clothing for the poor, by creating entrepreneurship solutions through social actions. EN( entrepreneurship)-ACT(action)-US(us) !
+                    </b>
+                </div>
+            </span>
+            </div>
+        </div>
+        <div class="col s12">
+            <div class="card-panel teal large">
+            <span>
+                <br>
+                <div class="blue-text">
+                    <div class="row card-content white-text">
+                        <p>
+                            Your waste can be others need
+                            Our cloths may get old with fashion but there are some people how live their life with one or two clothes
+                        </p>
+                        <p>
+                            1. In this way we all can help them to live a better life 
+                        </p>
+                        <p>
+                            2. Also we can reduce the wastege of clothes
+                        </p>
+                        <h5>
+                            Your Contribution Can make a difference
+                        </h5>
+                    </div>
+                </div>
+            </span>
+            <br>
+            </div>
+        </div>
+        
+        </div>
+    <!-- MAIN CONTENT END -->
+
+
+
+    <!-- FOOTER BEGIN -->
+    <footer class="page-footer" style='background-color: #232D39'>
+        <div class="container">
+            <div class="row">
+            <div class="col s12 center">
+                <h5 class="yellow-text darken-4"><b>THE PROJECT VASTRA</b></h5>
+            </div>
+            <div class="col s6 m4 center">
+                <h5 class="white-text">NAVIGATE</h5>
+                <ul  class='left-align'>
+                    <li><a href='/about/'>About</a></li>
+                    <li><a href='{% url "customer:catalog" %}'>Products Catalog</a></li>
+                    <li><a href='{% url "seller:new" %}'>Register As An Entrepreneur</a></li>
+                    <li><a href='{% url "customer:collectionDrive" %}'>Register For Collection Drive</a></li>
+                    <li><a href='{% url "customer:generalContact" %}'>Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="col s6 m4 center-align">
+                <h5 class="white-text">WHO ARE WE</h5>
+                <ul class='white-text'>
+                <li>
+                    <a href="#" hidefocus="true" style="outline: none;">Our Team</a>
+                </li>
+                <li>
+                    <a href='{% url "seller:profiles" %}'>Our Entrepreneurs</a>
+                </li>
+                <li>
+                    <a href='#'>For Developers</a>
+                </li>
+                </ul>
+            </div>
+            <div class="col s12 m4 center">
+                <h5 class="white-text">OTHER LINKS</h5>
+                <ul>
+                    <li>
+                        <a href="http://www.enactusindia.org/index.php" target="_blank" hidefocus="true" style="outline: none;">Enactus India</a>
+                    </li>
+                    <li>
+                        <a href="http://enactus.org/" target="_blank" hidefocus="true" style="outline: none;">Enactus International</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-copyright center">
+            <div class="container">
+            © 2019 All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+    <!-- FOOTER END -->
+
+
+    
+</body>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var elems = document.querySelectorAll('.carousel');
+        var instances = M.Carousel.init(elems, {
+        fullWidth: true,
+        indicators: true
+    });
+  });
+  M.AutoInit();
+</script>
+</html>

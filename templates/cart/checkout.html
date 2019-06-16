@@ -1,0 +1,159 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>The Project Vastra | Checkout</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel='stylesheet' type='text/css' href='{% static "materialize/css/materialize.min.css" %}'>
+    <link rel='stylesheet' type='text/css' href='{% static "base.css" %}'>
+
+    <link rel='stylesheet' type='text/css' href='{% static "cart/checkout.css" %}'>
+    <script src='{% static "materialize/js/materialize.min.js" %}'></script>
+</head>
+<body>
+
+    <!-- NAVBAR BEGIN -->
+    <div class="navbar-fixed">
+        <nav>
+            <div class="nav-wrapper white">
+                <a href='/' class='brand-logo black-text center'>THE PROJECT VASTRA</a>
+                <div class='bcart'>
+                    <a href="#" data-target="mobile-links" class="valign-wrapper left sidenav-trigger show-on-large"><i class="material-icons black-text">menu</i></a>
+                    <a href='{% url "cart:checkout" %}'>
+                        <span class='cart-text black-text right' href=''>Cart</span>
+                        <div class="valign-wrapper cart-num">{{ cartc }}</div>
+                        <span href="#" class="cart-logo valign-wrapper right black-text"><i class="material-icons black-text">shopping_cart</i></span>
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <ul class="sidenav right" id='mobile-links'>
+        <li><a class='first' href='/'>Home</a></li>
+        <li><a href='{% url "customer:about" %}'>About</a></li>
+        <li><a href='{% url "seller:profiles" %}'>Our Entrepreneurs</a></li>
+        <li><a href='{% url "customer:catalog" %}'>Products Catalog</a></li>
+        <li><a href='{% url "customer:collectionDrive" %}'>Register For Collection Drive</a></li>
+        <li><a href='{% url "seller:new" %}'>Register As An Entrepreneur</a></li>
+        <li><a href='{% url "customer:generalContact" %}'>Contact Us</a></li>
+        {% if user.is_authenticated %}
+            <li><a href='{% url "accounts:logout" %}'>Logout</a></li>
+        {% else %}
+            <li><a href='{% url "accounts:signin" %}'>SignIn</a></li>
+            <li><a href='{% url "accounts:signup" %}'>SignUp</a></li>
+        {% endif %}
+    </ul>
+
+    <!-- NAVBAR END -->
+
+    <!-- MAIN CONTENT BEGIN -->
+    <h4 class='center'>SHOPPING CART</h4>
+    <ul class="main-cart collection container hoverable">
+        {% if items %}
+            {% for item in items %}
+                <li class="collection-item avatar">
+                    <a href="{% url 'products:detail' item.prod.id %}">
+                    <img src="/media/{{item.prod.img}}" alt="" class="circle">
+                    <div class="title truncate name" style='font-weight: bold'>{{item.prod.name}}</div>
+                    <p class="purple-text ">Quantity: {{item.quantity}}</p>
+                    {% if item.prod.quantity %}
+                        <p class="green-text">In Stock</p>
+                    {% else %}
+                    <p class="red-text">Not In Stock</p>
+                    {% endif %}
+                    <p class='hurry-message'>
+                        {% if item.prod.quantity <= 5 %}
+                            Hurry! Only {{ item.prod.quantity }} left in stock. 
+                        {% endif %}
+                    </p>
+                    <a href="#!" class="secondary-content">
+                        <p>Price: &#8377 {{ item.prod.price }}</p>
+                    </a>
+                    </a>
+                </li>
+            {% endfor %}
+        <li class="collection-item cart-price avatar right-align row">
+            <span class="title subtotal col s12">
+                <span><b>Cart Subtotal ({{ cartc }} items):</b></span>
+                <span class='finalcprice'>Price: &#8377 {{final_price}}</span>
+            </span>
+            <span class='proceed-btn col s12 right'>
+                <a href="{% url 'payments:sorry' %}"><button class="btn" style='margin:10px;'>Proceed To Buy</button></a>
+            </span>
+        </li>
+        {% else %}
+        <li class="collection-item cart-price avatar center-align row">
+            <h3>Your Shopping Cart is empty.</h3>
+            <a href="{% url 'customer:catalog' %}" class="purple btn">
+                ADD ITEMS NOW
+            </a>
+        </li>
+        {% endif %}
+    </ul>
+    <!-- MAIN CONTENT END -->
+
+
+    <!-- FOOTER BEGIN -->
+    <footer class="page-footer" style='background-color: #232D39;'>
+        <div class="container">
+            <div class="row">
+            <div class="col s12 center">
+                <h5 class="yellow-text darken-4"><b>THE PROJECT VASTRA</b></h5>
+            </div>
+            <div class="col s6 m4 center">
+                <h5 class="white-text">NAVIGATE</h5>
+                <ul  class='left-align'>
+                    <li><a href='/about/'>About</a></li>
+                    <li><a href='{% url "customer:catalog" %}'>Products Catalog</a></li>
+                    <li><a href='{% url "seller:new" %}'>Register As An Entrepreneur</a></li>
+                    <li><a href='{% url "customer:collectionDrive" %}'>Register For Collection Drive</a></li>
+                    <li><a href='{% url "customer:generalContact" %}'>Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="col s6 m4 center-align">
+                <h5 class="white-text">WHO ARE WE</h5>
+                <ul class='white-text'>
+                <li>
+                    <a href="#" hidefocus="true" style="outline: none;">Our Team</a>
+                </li>
+                <li>
+                    <a href='{% url "seller:profiles" %}'>Our Entrepreneurs</a>
+                </li>
+                <li>
+                    <a href='#'>For Developers</a>
+                </li>
+                </ul>
+            </div>
+            <div class="col s12 m4 center">
+                <h5 class="white-text">OTHER LINKS</h5>
+                <ul>
+                    <li>
+                        <a href="http://www.enactusindia.org/index.php" target="_blank" hidefocus="true" style="outline: none;">Enactus India</a>
+                    </li>
+                    <li>
+                        <a href="http://enactus.org/" target="_blank" hidefocus="true" style="outline: none;">Enactus International</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-copyright center">
+            <div class="container">
+            © 2019 All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+    <!-- FOOTER END -->
+
+
+
+
+</body>
+<script>
+    M.AutoInit();
+</script>
+</html>
