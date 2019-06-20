@@ -23,7 +23,7 @@
                 <div class='bcart'>
                     <a href="#" data-target="mobile-links" class="valign-wrapper left sidenav-trigger show-on-large"><i class="material-icons black-text">menu</i></a>
                     <a href='{% url "cart:checkout" %}'>
-                        <span class='cart-text black-text right' href=''>Cart</span>
+                        <span class='cart-text black-text right' href='{% url "cart:checkout" %}'>Cart</span>
                         <div class="valign-wrapper cart-num">{{ cartc }}</div>
                         <span href="#" class="cart-logo valign-wrapper right black-text"><i class="material-icons black-text">shopping_cart</i></span>
                     </a>
@@ -52,7 +52,7 @@
 
 
     <!-- HEADING BEGIN -->
-    <div class="container center ">
+    <div class="container center top-content">
         <span><i class="material-icons blue-text medium">turned_in</i></span>
         <span><h3><b>ABOUT US</b></h3></span>
     </div>
@@ -167,7 +167,10 @@
         </div>
         <div class="footer-copyright center">
             <div class="container">
-            © 2019 All Rights Reserved.
+            <h6 class="grey-text darken-1"><b>An Initiative By <a href="http://iitrpr.ac.in/enactus/" class='lime-text darken-6'>Enactus IIT Ropar</a> </b></h6>
+                <h6>
+                    © 2019 All Rights Reserved.
+                </h6>
             </div>
         </div>
     </footer>

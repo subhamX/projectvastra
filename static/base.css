@@ -2,6 +2,10 @@
     font-family: 'Lato', sans-serif;
 }
 
+.top-content{
+    margin-top:40px;
+}
+
 .sidenav li a.first{
     margin-top: 40px !important;
 }
@@ -76,7 +80,7 @@ testing{
 @media only screen and (max-width:517px){
     .bcart .cart-num{
         position: absolute;
-        top: -3px;
+        top: -6px;
         right: 50px;
     }
     .bcart i{
