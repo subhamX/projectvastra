@@ -17,7 +17,7 @@
     <div class="navbar-fixed">
         <nav>
             <div class="nav-wrapper white">
-                <a href='/' class='brand-logo black-text center'>THE PROJECT VASTRA</a>
+                <a href='/' class='brand-logo black-text center'><img src="{% static '/logo/logo-head.png' %}"></a>
                 <div class='bcart'>
                     <a href="#" data-target="mobile-links" class="valign-wrapper left sidenav-trigger show-on-large"><i class="material-icons black-text">menu</i></a>
                     <a href='{% url "cart:checkout" %}'>
@@ -51,8 +51,10 @@
     <!-- MAIN CONTENT BEGIN -->
     <div class='content container valign-wrapper'>
         <div class="content-img center">
-            <img src='/media/{{product.img}}' class='responsive-prod-img' >
-            <span class='truncate'>{{product.name}}</span>
+            <a href="{% url 'products:detail' product.id %}">
+                <img src='/media/{{product.img}}' class='responsive-prod-img' >
+                <span class='truncate'>{{product.name}}</span>
+            </a>
         </div>
         <p class='hurry-message center-align'>
             <b>
@@ -72,12 +74,13 @@
     <h3 class='center'>Recommended for you</h3>
     <section class='entrepreneur-list container'>
             {% for prod in products %}
-                <div class="product hoverable">
+                <a href="{% url 'products:detail' prod.id %}">
+                    <div class="product hoverable">
                         <div class="custom-card center">
                             <div class="custom-card-image">
                                 <img src='/media/{{prod.img}}'>
                             </div>
-                            <a href='' class='custom-card-title'>{{prod.name}}</a>
+                            <a href="{% url 'products:detail' prod.id %}" class='custom-card-title'>{{prod.name}}</a>
                             <div class="card-content left-align price">
                                 <p class='custom-card-price'>
                                     <b>&#8377 {{ prod.price }}</b>
@@ -90,6 +93,7 @@
                             </div>
                         </div>
                     </div>
+                </a>
             {% endfor %}
     </section>
     <!-- RECOMM CONTENT END -->

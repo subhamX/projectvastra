@@ -60,7 +60,7 @@ body{
     color: maroon;
 }
 
-.brand-logo{
+testing{
     font-weight: bolder;
 }
 
@@ -68,23 +68,16 @@ body{
     font-size: 60px !important;
 }
 
-@media only screen and (max-width:628px){
-    .brand-logo{
-        /* font-weight: bolder; */
-        font-size: 24px !important;
-    }
-    .bcart i{
-        font-size: 50px !important;
-    }
+.brand-logo img{
+    height: 100%;
+}
+
+
+@media only screen and (max-width:517px){
     .bcart .cart-num{
         position: absolute;
-        top: -9px;
+        top: -3px;
         right: 50px;
-    }
-}
-@media only screen and (max-width:517px){
-    .brand-logo{
-        font-size: 20px !important;
     }
     .bcart i{
         font-size: 47px !important;
@@ -93,32 +86,7 @@ body{
         font-size: 13px;
     }
 }
-@media only screen and (max-width:432px){
-    .brand-logo{
-        font-size: 18px !important;
-    }
-    .bcart i{
-        font-size: 40px !important;
-    }
-    .bcart .cart-num{
-        position: absolute;
-        top: -6.5px;
-        right: 47px;
-    }
-}
-@media only screen and (max-width:395px){
-    .brand-logo{
-        font-size: 15px !important;
-    }
-    .bcart .sidenav-trigger i{
-        font-size: 30px !important;
-    }
-}
-@media only screen and (max-width:330px){
-    .brand-logo{
-        font-size: 13px !important;
-        font-weight: 500;
-    }
+@media only screen and (max-width:371px){
     .bcart .sidenav-trigger i{
         font-size: 30px !important;
     }
@@ -127,19 +95,20 @@ body{
     }
     .bcart .cart-logo{
         position: absolute;
-        top: 0;
+        top: 7;
         right: 10px;
     }
     .bcart .cart-num{
         position: absolute;
-        top: -6.5px;
-        right: 25px;
+        top: -1.5px;
+        right: 29px;
     }
 }
-/*
-@media only screen and (max-width:624px){
-    .brand-logo{
-        font-weight: bold;
-        font-size: 18px !important;
-    }    
-} */
+
+@media only screen and (max-width:308px){
+    .bcart .cart-num{
+        position: absolute;
+        top: -0.5px;
+        right: 29px;
+    }
+}
