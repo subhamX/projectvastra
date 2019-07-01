@@ -17,7 +17,7 @@ class NewSeller(models.Model):
     location = models.CharField(max_length=200)
     phone = models.IntegerField()
     why = models.CharField(max_length=200)
-    user = models.ForeignKey(User, on_delete=models.CASCADE, default=None)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, default=None, null=True)
 
     def __str__(self):
         return self.name

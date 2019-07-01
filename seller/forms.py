@@ -3,7 +3,7 @@ from seller import models
 
 
 class NewSellerForm(forms.ModelForm):
-    query = forms.CharField(widget=forms.Textarea)
+    why = forms.CharField(widget=forms.Textarea)
     class Meta:
         model = models.NewSeller
         fields = [

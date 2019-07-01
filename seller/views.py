@@ -24,7 +24,7 @@ def newSeller(request):
     else:
         cart_count = 0
     if( request.method == 'POST'):
-        form = forms.NewSellerForm(request.POSt)
+        form = forms.NewSellerForm(request.POST)
         if( form.is_valid() ):
             if( request.user.is_authenticated ):
                 instance = form.save(commit=False)

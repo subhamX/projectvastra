@@ -17,7 +17,7 @@ class ContactUsForm(forms.ModelForm):
 
 
 class CollectionForm(forms.ModelForm):
-    query = forms.CharField(widget=forms.Textarea)
+    comments = forms.CharField(widget=forms.Textarea)
     class Meta:
         model = models.Collection
         fields = [
@@ -27,22 +27,3 @@ class CollectionForm(forms.ModelForm):
             'location',
             'comments',
         ]
-
-# class LoginForm(forms.Form):
-#     username = forms.CharField(max_length=40)
-#     password = forms.CharField(widget=forms.PasswordInput())
-
-
-    # name = models.CharField(max_length=200)
-    # query = models.CharField(max_length=200)
-    # email = models.EmailField()
-    # phone = models.IntegerField(max_length=10)
-
-
-
-    #     name = models.CharField(max_length=200)
-    # location = models.CharField(max_length=200)
-    # comments = models.CharField(max_length=200)
-    # email = models.EmailField()
-    # phone = models.IntegerField(max_length=10)
-    # user = models.ForeignKey(Us
