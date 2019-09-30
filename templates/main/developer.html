@@ -1,0 +1,45 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" href='{% static "logo/icon.ico" %}'>
+    <title>For Developers</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel='stylesheet' type='text/css' href='{% static "materialize/css/materialize.min.css" %}'>
+    <link rel='stylesheet' type='text/css' href='{% static "base.css" %}'>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</head>
+<body>
+    {% include "main/navbar.html" %}
+
+    <div class="content container">
+        <div class="container-1">
+            <h3>Overview</h3>
+            <div class='content'>
+                <span class='purple-text'>Project Vastra</span> is an E-Commerce Website under Enactus IIT Ropar which bridges the gap between our project entrepreneurs and buyers by providing a platform for easy selling and buying of clothes.
+                <br>
+                We the <span class='blue-text darken-4'>Technical Team of Enactus</span> are a huge supporter of Open Source. We invite all developers across the globe to connect with us and contribute. 
+                </div>
+        </div>
+        <div class="container-2">
+            <h3>How to contribute?</h3>
+            <div class='content'>
+                <span style="font-weight: bold" >This project is active and needs significant improvements.</span>
+                You can contribute to this project by adding bugs or feature requests at our <a href="https://github.com/subhamX/projectvastra" >GitHub Link</a>. 
+                <br>
+                We hope to see you all there!
+                <br>
+                <span style='font-weight: bolder'>#WeAllWin</span>
+            </div>
+        </div>
+    </div>
+    {% include "main/footer.html" %}
+</body>
+<script>
+        M.AutoInit();
+</script>
+</html>

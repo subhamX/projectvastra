@@ -13,6 +13,7 @@ from django.conf.urls import handler404, handler500
 
 urlpatterns = [
     path('', include(customerUrls)),
+    path('developer/', views.forDeveloper, name='devLink'),
     path('admin/', admin.site.urls),
     path('seller/', include(sellerUrls)),
     path('accounts/', include(accountsUrls)),

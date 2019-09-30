@@ -1,0 +1,34 @@
+{% load static %}
+<!-- Navbar Begin -->
+<div class="navbar-fixed">
+    <nav>
+        <div class="nav-wrapper white">
+            <a href='/' class='brand-logo black-text center'><img src="{% static '/logo/logo-head.png' %}"></a>
+            <div class='bcart'>
+                <a href="#" data-target="mobile-links" class="valign-wrapper left sidenav-trigger show-on-large"><i class="material-icons black-text">menu</i></a>
+                <a href='{% url "cart:checkout" %}'>
+                    <span class='cart-text black-text right' href=''>Cart</span>
+                    <div class="valign-wrapper cart-num">{{ cartc }}</div>
+                    <span href="#" class="cart-logo valign-wrapper right black-text"><i class="material-icons black-text">shopping_cart</i></span>
+                </a>
+            </div>
+        </div>
+    </nav>
+</div>
+
+<ul class="sidenav right" id='mobile-links'>
+    <li><a class='first' href='/'>Home</a></li>
+    <li><a href='{% url "customer:about" %}'>About</a></li>
+    <li><a href='{% url "seller:profiles" %}'>Our Entrepreneurs</a></li>
+    <li><a href='{% url "customer:catalog" %}'>Products Catalog</a></li>
+    <li><a href='{% url "customer:collectionDrive" %}'>Register For Collection Drive</a></li>
+    <li><a href='{% url "seller:new" %}'>Register As An Entrepreneur</a></li>
+    <li><a href='{% url "customer:generalContact" %}'>Contact Us</a></li>
+    {% if user.is_authenticated %}
+        <li><a href='{% url "accounts:logout" %}'>Logout</a></li>
+    {% else %}
+        <li><a href='{% url "accounts:signin" %}'>SignIn</a></li>
+        <li><a href='{% url "accounts:signup" %}'>SignUp</a></li>
+    {% endif %}
+</ul>
+<!-- Navbar End -->

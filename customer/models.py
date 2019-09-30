@@ -31,7 +31,8 @@ class Collection(models.Model):
     email = models.EmailField()
     phone = models.IntegerField()
     user = models.ForeignKey(User, on_delete=models.CASCADE, default=None, null=True)
-
+    class Meta:
+        verbose_name = 'Collection Request'
     def __str__(self):
         return self.name
 

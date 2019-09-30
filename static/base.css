@@ -36,10 +36,20 @@ nav{
     top: 0;
     right: 30px;
 }
+body{
+    background-color: #EFEFE8;
+    min-height: 100vh
+}
+
+footer{
+    /* position: absolute; */
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
 
 footer{
     margin-top: 40px !important;
-
 }
 
 footer div ul li a{
@@ -54,9 +64,6 @@ footer div ul li a:hover{
 }
 .sidenav li a{
     font-weight: bold !important;
-}
-body{
-    background-color: #EFEFE8;
 }
 
 .hurry-message{
@@ -73,8 +80,14 @@ testing{
 }
 
 .brand-logo img{
-    height: 100%;
+    width: 12rem;
 }
+
+/* .entrepreneur-list{
+    width: %;
+    margin: 0 auto; */
+/* } */
+
 
 
 @media only screen and (max-width:517px){

@@ -5,3 +5,4 @@ from customer import models
 
 admin.site.register(models.Customer)
 admin.site.register(models.ContactUs)
+admin.site.register(models.Collection)

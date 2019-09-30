@@ -1,0 +1,24 @@
+{% load static %}
+
+{% for product in products %}
+    <a href="{% url 'products:detail' product.id %}">
+        <div class="product hoverable">
+            <div class="custom-card center">
+                <div class="custom-card-image">
+                    <img src='/media/{{product.img}}'>
+                </div>
+                <a href="{% url 'products:detail' product.id %}" class='custom-card-title'>{{product.name}}</a>
+                <div class="card-content left-align price">
+                    <p class='custom-card-price'>
+                        <b>&#8377 {{ product.price }}</b>
+                    </p>
+                    <p class='hurry-message'>
+                        {% if product.quantity < 3 %}
+                            Hurry! Only {{ product.quantity }} left in stock. 
+                        {% endif %}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </a>
+{% endfor %}
