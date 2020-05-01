@@ -83,10 +83,11 @@ testing{
     width: 12rem;
 }
 
-/* .entrepreneur-list{
-    width: %;
-    margin: 0 auto; */
-/* } */
+
+
+a[data-target=mobile-links] i{
+    font-size: 45px !important;
+}
 
 
 

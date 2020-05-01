@@ -20,10 +20,13 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'kzpa*wv+vp*n+#bt__$atee*2@28#h6vc0g_=1e--_t&%1z&2w'
+SECRET_KEY = 'YOUR_SECRET_KEY'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+if(os.environ.get('ENV')=='PROD'):
+    DEBUG=False
+else:
+    DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -119,7 +122,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'IST'
 
 USE_I18N = True
 
@@ -134,9 +137,11 @@ USE_TZ = True
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 
-
-STATICFILES_DIRS = [
-    'static',
-]
+if (DEBUG):
+    STATICFILES_DIRS = [
+        'static',
+    ]
+else:
+    STATIC_ROOT='static'
 
 MEDIA_ROOT='media'

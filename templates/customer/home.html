@@ -1,5 +1,6 @@
 {% load static %}
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,43 +16,51 @@
     <link rel='stylesheet' type='text/css' href='{% static "customer/homestyle.css" %}'>
     <script src='{% static "materialize/js/materialize.min.js" %}'></script>
 </head>
+
 <body>
     <!-- Including Navbar -->
     {% include "main/navbar.html" %}
 
     <!-- CAROUSEL BEGIN -->
     <section>
-            <div class="carousel carousel-slider">
-                <a class="carousel-item" href="#one!"><img src="static/customer/img/home/mainslider/1.jpg" class='responsive-img' style='height: 500px; object-fit: cover'></a>
-                <a class="carousel-item" href="#one!"><img src="static/customer/img/home/mainslider/2.jpg" class='responsive-img' style='height: 500px; object-fit: cover'></a>
-                <a class="carousel-item" href="#one!"><img src="static/customer/img/home/mainslider/3.jpg" class='responsive-img' style='height: 500px; object-fit: cover'></a>
-            </div>
+        <div class="carousel carousel-slider">
+            <a class="carousel-item" href="#one!"><img src="static/customer/img/home/mainslider/1.jpg"
+                    class='carousel-img'></a>
+            <a class="carousel-item" href="#one!"><img src="static/customer/img/home/mainslider/2.jpg"
+                    class='carousel-img'></a>
+            <a class="carousel-item" href="#one!"><img src="static/customer/img/home/mainslider/3.jpg"
+                    class='carousel-img'></a>
+        </div>
     </section>
     <!-- CAROUSEL END -->
 
-    
+
     <!-- FLAG BEGIN -->
-    <div class="collection container center">
-        <a href="{% url 'customer:catalog' %}" class="collection-item black-text hoverable" style='background-color: #ff9933;'>
+    <div class="collection container center" id='main-collection-wrapper'>
+        <a href="{% url 'customer:catalog' %}" class="collection-item black-text hoverable"
+            style='background-color: #ff9933;'>
             <span>Buy</span>
         </a>
-        <a href="{% url 'seller:new' %}" class="collection-item white darken-4 blue-text hoverable"><span>Register As Entrepreneur</span></a>
-        <a href="{% url 'customer:collectionDrive' %}" class="collection-item green black-text hoverable"><span>Register For A Collection Drive</span></a>
+        <a href="{% url 'seller:new' %}" class="collection-item white darken-4 blue-text hoverable"><span>Register As
+                Entrepreneur</span></a>
+        <a href="{% url 'customer:collectionDrive' %}" class="collection-item green white-text hoverable"><span>Register
+                For A Collection Drive</span></a>
     </div>
     <!-- FLAG END -->
-    
+
     <!-- Including Footer -->
     {% include "main/footer.html" %}
-    
+
 </body>
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
+        M.AutoInit();
         var elems = document.querySelectorAll('.carousel');
         var instances = M.Carousel.init(elems, {
-        fullWidth: true,
-        indicators: true
+            fullWidth: true,
+            indicators: true
+        });
     });
-  });
-  M.AutoInit();
 </script>
+
 </html>

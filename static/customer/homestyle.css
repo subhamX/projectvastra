@@ -16,29 +16,49 @@
     color:black !important;
     font-weight: bold;
 }
+#main-collection-wrapper{
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr);
+    border: none;
+}
 
 .collection .collection-item{
     margin: 20px;
     padding: 15px 0;
-    font-size: 25px;
+    font-size: 15px;
     font-weight: bolder;
-    border-radius: 45px;
-
+    border-radius: 20px;
 }
 
 
+.carousel-img{
+    width: 100% !important;
+    height: 60vh !important;
+    object-fit: cover;
+}
 
 @media only screen and (max-width: 900px){
     .collection .collection-item{
         margin: 15px;
         padding: 10px 0;
-        font-size: 20px;    
+        font-size: 13px;    
+    }
+}
+
+@media only screen and (max-width: 727px){
+    #main-collection-wrapper{
+        display: flex !important;
+        flex-direction: column;
+        border: none;
+    }
+    #main-collection-wrapper a{
+        margin: 8px;
     }
 }
 @media only screen and (max-width: 450px){
     .collection .collection-item{
         margin: 10px;
         padding: 7px 7px;
-        font-size: 15px;    
+        font-size: 10px;    
     }
 }
